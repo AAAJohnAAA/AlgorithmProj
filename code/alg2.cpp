@@ -1,4 +1,3 @@
-/*
 #include <iostream>
 #include <vector>
 #include <cmath>
@@ -11,20 +10,20 @@
 using namespace std;
 using namespace std::chrono;
 
-const int MAX_N = 20; // ×î´óµãÊıÏŞÖÆ
-int n; // µãÊı
-double dist[MAX_N][MAX_N]; // ¾àÀë¾ØÕó
+const int MAX_N = 20; // æœ€å¤§ç‚¹æ•°é™åˆ¶
+int n; // ç‚¹æ•°
+double dist[MAX_N][MAX_N]; // è·ç¦»çŸ©é˜µ
 bool visited[MAX_N];
 double minCost = numeric_limits<double>::max();
 vector<int> bestPath;
 vector<int> path;
 
-// ¼ÆËãÁ½µãÅ·¼¸ÀïµÃ¾àÀë
+// è®¡ç®—ä¸¤ç‚¹æ¬§å‡ é‡Œå¾—è·ç¦»
 double calcDistance(pair<double, double>& a, pair<double, double>& b) {
     return sqrt((a.first - b.first) * (a.first - b.first) + (a.second - b.second) * (a.second - b.second));
 }
 
-// »ØËİº¯Êı
+// å›æº¯å‡½æ•°
 void backtrack(int currentNode, int visitedCount, double currentCost) {
     if (visitedCount == n) {
         if (dist[currentNode][0] > 0) {
@@ -41,7 +40,7 @@ void backtrack(int currentNode, int visitedCount, double currentCost) {
     for (int i = 0; i < n; i++) {
         if (!visited[i] && dist[currentNode][i] > 0) {
             double newCost = currentCost + dist[currentNode][i];
-            if (newCost < minCost) { // ¼ôÖ¦
+            if (newCost < minCost) { // å‰ªæ
                 visited[i] = true;
                 path.push_back(i);
                 backtrack(i, visitedCount + 1, newCost);
@@ -54,10 +53,10 @@ void backtrack(int currentNode, int visitedCount, double currentCost) {
 
 int main() {
     srand(time(0));
-    cout << "ÇëÊäÈëµãµÄ¸öÊı (×î¶à20): ";
+    cout << "è¯·è¾“å…¥ç‚¹çš„ä¸ªæ•° (æœ€å¤š20): ";
     cin >> n;
     if (n > MAX_N || n <= 1) {
-        cout << "µãÊı±ØĞëÔÚ2µ½" << MAX_N << "Ö®¼ä£¡" << endl;
+        cout << "ç‚¹æ•°å¿…é¡»åœ¨2åˆ°" << MAX_N << "ä¹‹é—´ï¼" << endl;
         return 1;
     }
 
@@ -67,7 +66,7 @@ int main() {
         points[i].second = rand() % 1000;
     }
 
-    // ¼ÆËã¾àÀë¾ØÕó
+    // è®¡ç®—è·ç¦»çŸ©é˜µ
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             dist[i][j] = calcDistance(points[i], points[j]);
@@ -85,10 +84,9 @@ int main() {
     duration<double> elapsed = end - start;
 
     cout << fixed << setprecision(2);
-    cout << "×ÜµãÊı: " << n << endl;
-    cout << "Â·¾¶×Ü³¤¶È: " << minCost << endl;
-    cout << "ÔËĞĞÊ±¼ä: " << elapsed.count() << " Ãë" << endl;
+    cout << "æ€»ç‚¹æ•°: " << n << endl;
+    cout << "è·¯å¾„æ€»é•¿åº¦: " << minCost << endl;
+    cout << "è¿è¡Œæ—¶é—´: " << elapsed.count() << " ç§’" << endl;
 
     return 0;
 }
-*/
