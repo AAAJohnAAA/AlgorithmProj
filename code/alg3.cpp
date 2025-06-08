@@ -1,4 +1,3 @@
-/*
 #include <iostream>
 #include <vector>
 #include <cmath>
@@ -93,18 +92,18 @@ int main() {
     cout << fixed;
 
     int n;
-    cout << "ÇëÊäÈëµãµÄÊýÁ¿£º";
+    cout << "è¯·è¾“å…¥ç‚¹çš„æ•°é‡ï¼š";
     cin >> n;
     if (n < 2) {
-        cout << "µãÊýÖÁÉÙÎª2" << endl;
+        cout << "ç‚¹æ•°è‡³å°‘ä¸º2" << endl;
         return 0;
     }
 
     int k;
-    cout << "ÇëÊäÈë2-opt×î´óµü´ú´ÎÊý k£º";
+    cout << "è¯·è¾“å…¥2-optæœ€å¤§è¿­ä»£æ¬¡æ•° kï¼š";
     cin >> k;
     if (k < 1) {
-        cout << "µü´ú´ÎÊýÖÁÉÙÎª1" << endl;
+        cout << "è¿­ä»£æ¬¡æ•°è‡³å°‘ä¸º1" << endl;
         return 0;
     }
 
@@ -127,10 +126,9 @@ int main() {
 
     double length = pathLength(points, path);
 
-    cout << "µãÊýÁ¿: " << n << "\n";
-    cout << "Â·¾¶×Ü³¤¶È: " << length << "\n";
-    cout << "ÔËÐÐÊ±¼ä: " << duration.count() << " ºÁÃë\n";
+    cout << "ç‚¹æ•°é‡: " << n << "\n";
+    cout << "è·¯å¾„æ€»é•¿åº¦: " << length << "\n";
+    cout << "è¿è¡Œæ—¶é—´: " << duration.count() << " æ¯«ç§’\n";
 
     return 0;
 }
-*/
